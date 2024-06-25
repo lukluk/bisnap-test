@@ -22,14 +22,8 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
       -
-        name: Build and push dod
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: luklukls/aws-helm:dod
-      -
         name: Build and push latest
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: luklukls/aws-helm:latest
+          tags: lukluk/bisnap-test:latest
