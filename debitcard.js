@@ -45,7 +45,7 @@ const headers = {
 };
 
 
-axios.post(`http://${host}${endpointUrl}`, body, { headers })
+axios.post(`https://${host}${endpointUrl}`, body, { headers })
   .then(response => {    
     fs.writeFileSync('otp.txt', response.data.additionalInfo.chargeToken);
     console.log(response.data)

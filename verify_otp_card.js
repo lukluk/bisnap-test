@@ -31,7 +31,7 @@ const headers = {
 };
 
 
-axios.post(`http://${host}${endpointUrl}`, body, { headers })
+axios.post(`https://${host}${endpointUrl}`, body, { headers })
   .then(response => {    
     fs.writeFileSync('token.txt', response.data.bankCardToken);
     console.log(response.data)

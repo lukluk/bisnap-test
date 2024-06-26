@@ -50,7 +50,7 @@ const headers = {
 };
 
 
-axios.post(`http://${host}/snap/v1.0/registration-card-bind`, body, { headers })
+axios.post(`https://${host}/snap/v1.0/registration-card-bind`, body, { headers })
   .then(response => {        
     fs.writeFileSync('otp.txt', response.data.chargeToken);
     console.log(response.data)

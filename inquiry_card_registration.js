@@ -10,7 +10,7 @@ async function  inquiryCard() {
   const timestamp = new Date().toISOString();
   
   try {
-    const response = await axios.get(`http://${host}${endpointUrl}/custIdMerchant/0012345679504`, {
+    const response = await axios.get(`https://${host}${endpointUrl}/custIdMerchant/0012345679504`, {
       headers: {
         'Authorization': "Bearer "+accessToken,
         'X-TIMESTAMP': timestamp,        
