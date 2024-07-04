@@ -17,7 +17,12 @@ async function  inquiryCard() {
         'X-PARTNER-ID': '123',
         'CHANNEL-ID': '123',
         'X-EXTERNAL-ID': '2323232',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-IP-ADDRESS': '',
+  'X-DEVICE-ID' : 'deviceid',
+  'X-LATITUDE' : '22',
+  'X-LONGITUDE' : '22',
+  'ORIGIN' : 'web',
       }
     });
 

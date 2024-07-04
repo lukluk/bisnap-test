@@ -26,6 +26,11 @@ const headers = {
   'X-SIGNATURE': signature,
   'X-PARTNER-ID': '2323',
   'CHANNEL-ID': '23232',
+  'X-IP-ADDRESS': '',
+  'X-DEVICE-ID' : 'deviceid',
+  'X-LATITUDE' : '22',
+  'X-LONGITUDE' : '22',
+  'ORIGIN' : 'web',
   'X-EXTERNAL-ID': '2323232',
   'Content-Type': 'application/json'
 };

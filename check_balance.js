@@ -25,6 +25,11 @@ async function  checkBalance() {
         'X-SIGNATURE': xSignature,
         'X-PARTNER-ID': '123',
         'CHANNEL-ID': '123',
+        'X-IP-ADDRESS': '',
+  'X-DEVICE-ID' : 'deviceid',
+  'X-LATITUDE' : 'latitude',
+  'X-LONGITUDE' : 'longitude',
+  'ORIGIN' : 'web',
         'X-EXTERNAL-ID': '2323232',
         'Content-Type': 'application/json'
       }
