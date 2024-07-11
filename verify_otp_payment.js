@@ -3,7 +3,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 const axios = require('axios');
 const host = process.env.HOST;
-const clientSecret = process.env.CLIENT_KEY;
+const clientSecret = process.env.CLIENT_SECRET;
 const accessToken = fs.readFileSync('access_token.txt', 'utf8');
 
 const otp = fs.readFileSync('otp.txt', 'utf8');
