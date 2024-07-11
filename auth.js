@@ -6,12 +6,13 @@ const moment = require('moment');
 
 async function generateAccessToken() {
   const host = process.env.HOST;
-  const clientKey = process.env.CLIENT_KEY;
+  const clientId = process.env.CLIENT_ID;
+  console.log(clientId)
   const privateKey = fs.readFileSync('private_key.pem', 'utf8');
 
-  const url = `http://${host}/snap/v1.0/access-token/b2b`;
+  const url = `http://${host}/snap/v1.0/access-token/b2b`; 
   const xTimestamp = moment().toISOString();
-  const stringToSign = `${clientKey}|${xTimestamp}`;
+  const stringToSign = `${clientId}|${xTimestamp}`;
 
   const signer = crypto.createSign('RSA-SHA256');
   signer.update(stringToSign);
@@ -23,7 +24,7 @@ async function generateAccessToken() {
     }, {
       headers: {
         'X-SIGNATURE': xSignature,
-        'X-CLIENT-KEY': clientKey,
+        'X-CLIENT-KEY': clientId,
         'X-TIMESTAMP': xTimestamp,
         'Content-Type': 'application/json',
       },

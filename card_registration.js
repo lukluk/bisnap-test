@@ -3,10 +3,11 @@ const fs = require('fs');
 const crypto = require('crypto');
 const axios = require('axios');
 const host = process.env.HOST;
-const clientSecret = process.env.CLIENT_KEY;
+let clientSecret = process.env.CLIENT_SECRET;
+clientSecret16 = clientSecret.substring(0, 16);
 // Replace 'path_to_your_file' with the actual file path
 const accessToken = fs.readFileSync('access_token.txt', 'utf8');
-const md5Key = crypto.createHash('md5').update(clientSecret).digest("hex");
+const md5Key = crypto.createHash('md5').update(clientSecret16).digest("hex");
 
 const cardData = {
   bankCardType: "D",
@@ -25,7 +26,7 @@ function encryptCardData(data, key, iv) {
   return encrypted;
 }
 
-const encryptedCardData = encryptCardData(cardData, md5Key, clientSecret);
+const encryptedCardData = encryptCardData(cardData, md5Key, clientSecret16);
 
 const body = {
     custIdMerchant: "0012345679504",
