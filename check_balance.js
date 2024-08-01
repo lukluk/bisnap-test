@@ -18,7 +18,7 @@ async function  checkBalance() {
   const xSignature = crypto.createHmac('sha512', clientSecret).update(stringToSign).digest('base64');
 
   try {
-    const response = await axios.post(`http://${host}${endpointUrl}`, requestBody, {
+    const response = await axios.post(`${host}${endpointUrl}`, requestBody, {
       headers: {
         'Authorization': "Bearer "+accessToken,
         'X-TIMESTAMP': timestamp,

@@ -29,7 +29,7 @@ function encryptCardData(data, key, iv) {
 const encryptedCardData = encryptCardData(cardData, md5Key, clientSecret16);
 
 const body = {
-    custIdMerchant: "0012345679504",
+    custIdMerchant: "001232456729504",
     cardData: encryptedCardData
   };
 const requestBody = JSON.stringify(body); // Minify the request body
@@ -46,7 +46,7 @@ const headers = {
   'X-SIGNATURE': signature,
   'X-PARTNER-ID': '2323',
   'CHANNEL-ID': '23232',
-  'X-EXTERNAL-ID': '2323232',
+  'X-EXTERNAL-ID': Math.random().toString(36).substring(7),
   'Content-Type': 'application/json',
   'X-IP-ADDRESS': '',
   'X-DEVICE-ID' : 'deviceid',
@@ -56,8 +56,8 @@ const headers = {
 };
 
 
-axios.post(`http://${host}/snap/v1.0/registration-card-bind`, body, { headers })
-  .then(response => {        
+axios.post(`${host}/snap/v1.0/registration-card-bind`, body, { headers })
+  .then(response => {            
     fs.writeFileSync('otp.txt', response.data.chargeToken);
     console.log(response.data)
   })

@@ -10,7 +10,7 @@ async function generateAccessToken() {
   console.log(clientId)
   const privateKey = fs.readFileSync('private_key.pem', 'utf8');
 
-  const url = `http://${host}/snap/v1.0/access-token/b2b`; 
+  const url = `${host}/snap/v1.0/access-token/b2b`; 
   const xTimestamp = moment().toISOString();
   const stringToSign = `${clientId}|${xTimestamp}`;
 

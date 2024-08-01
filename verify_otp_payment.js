@@ -13,7 +13,7 @@ const body = {
     chargeToken: otp,
     type: "payment",
     additionalInfo: {
-      bankCardToken: "5qofOnFhQmIUwZLBPA2HEjbXS9YgxEgjNiHh5hzVYlulaQXnHXcqlXMpBbLLxZOIlIY0LFBzifidu8fWiDm6p9h1xbjTEAsd6HTvYJVsW1Ne7Kt5D24p0o1mNVasG1qf"
+      bankCardToken: fs.readFileSync('token.txt', 'utf8')
     }
   };
 const requestBody = JSON.stringify(body); // Minify the request body
@@ -35,12 +35,12 @@ const headers = {
   'X-LATITUDE' : '22',
   'X-LONGITUDE' : '22',
   'ORIGIN' : 'web',
-  'X-EXTERNAL-ID': '2323232',
+  'X-EXTERNAL-ID': Math.random().toString(36).substring(7),
   'Content-Type': 'application/json'
 };
 
 
-axios.post(`http://${host}${endpointUrl}`, body, { headers })
+axios.post(`${host}${endpointUrl}`, body, { headers })
   .then(response => {    
     console.log(response.data)
   })

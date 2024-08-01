@@ -35,7 +35,7 @@ const headers = {
 };
 
 
-axios.post(`http://${host}${endpointUrl}`, body, { headers })
+axios.post(`${host}${endpointUrl}`, body, { headers })
   .then(response => {    
     console.log(response.data)
   })
