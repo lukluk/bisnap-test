@@ -11,8 +11,8 @@ const md5Key = crypto.createHash('md5').update(clientSecret16).digest("hex");
 
 const cardData = {
   bankCardType: "D",
-  bankCardNo: "5859700200000863",
-  identificationNo: "3511000101806128",
+  bankCardNo: "5859700200001598",
+  identificationNo: "3511000101806999",
   identificationType: "02",
   email: "crisevan@gmail.com",
   expiryDate: "1027"
